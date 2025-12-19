@@ -141,8 +141,7 @@ class EarlyDataExtension extends AbstractExtension
      */
     public static function decode(string $data, int $format = self::FORMAT_CLIENT_HELLO): static
     {
-        /** @phpstan-ignore-next-line */
-        $extension = new static($format);
+        $extension = new self($format);
 
         if (self::FORMAT_NEW_SESSION_TICKET === $format) {
             // 新会话票据格式

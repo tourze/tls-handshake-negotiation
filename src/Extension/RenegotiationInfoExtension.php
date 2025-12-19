@@ -93,9 +93,7 @@ class RenegotiationInfoExtension extends AbstractExtension
         if (strlen($data) - 1 < $length) {
             throw new InvalidArgumentException('安全重协商扩展数据长度与实际不符');
         }
-
-        /** @phpstan-ignore-next-line */
-        $extension = new static();
+        $extension = new self();
         if ($length > 0) {
             $extension->setRenegotiatedConnection(substr($data, 1, $length));
         }

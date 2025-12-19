@@ -26,9 +26,7 @@ class TestExtension extends AbstractExtension
         $lengthResult = self::decodeUint16($data, $offset);
         $length = $lengthResult['value'];
         $offset = $lengthResult['offset'];
-
-        /** @phpstan-ignore-next-line */
-        $extension = new static();
+        $extension = new self();
         if ($length > 0) {
             $extension->setData(substr($data, $offset, $length));
         }

@@ -230,8 +230,7 @@ class PreSharedKeyExtension extends AbstractExtension
      */
     public static function decode(string $data, bool $isServerFormat = false): static
     {
-        /** @phpstan-ignore-next-line */
-        $extension = new static($isServerFormat);
+        $extension = new self($isServerFormat);
 
         if ($isServerFormat) {
             self::decodeServerFormat($extension, $data);

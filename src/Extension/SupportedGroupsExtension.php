@@ -179,8 +179,7 @@ class SupportedGroupsExtension extends AbstractExtension
     public static function decode(string $data): static
     {
         $offset = 0;
-        /** @phpstan-ignore-next-line */
-        $extension = new static([]);
+        $extension = new self([]);
 
         // 数据长度至少需要2字节
         if (strlen($data) < 2) {
